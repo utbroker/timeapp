@@ -1,12 +1,12 @@
 var express = require('express');
 var moment = require('moment');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 
 
 // Time stamp Route
 router.get('/', function(req, res) {
-	var date = req;
+	var date = req.params.query;
 	var unix = null;
 	var natural = null;
 	// Check if Unix
